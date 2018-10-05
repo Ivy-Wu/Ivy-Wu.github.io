@@ -1,3 +1,8 @@
+---
+title: This is my title
+layout: post
+---
+
 ## Welcome to Ivy's Homepage
 
 My name is Ivy Wu.
