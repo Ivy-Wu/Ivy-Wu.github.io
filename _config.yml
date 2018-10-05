@@ -1,4 +1,4 @@
 # General Jekyll Config
 theme: jekyll-theme-minimal
 title: Welcome to Moon
-show_downloads: ["false"]
+show_downloads: ["true"]
