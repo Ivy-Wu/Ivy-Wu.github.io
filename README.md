@@ -1,7 +1,3 @@
----
-title: This is my title
-layout: post
----
 
 ## Welcome to Ivy's Homepage
 
