@@ -1,3 +1,4 @@
 # General Jekyll Config
 theme: jekyll-theme-minimal
-title: Welcome to Ivy's Homepage!
+title: Welcome to Moon
+show_downloads: ["false"]
