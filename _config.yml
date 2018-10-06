@@ -3,3 +3,5 @@ theme: jekyll-theme-minimal
 title: Welcome to Moon
 show_downloads: false
 logo: pics/logo.png
+plugins:
+  - jemoji
