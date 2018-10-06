@@ -3,6 +3,6 @@ theme: jekyll-theme-minimal
 title: Welcome to Moon
 show_downloads: false
 logo: pics/logo.png
-description: My name is Ivy Wu. There are three things that are important to me: bed, computer, peanut butter. MOON contains my previous school works and some random thoughts. You are more than welcome to have a space exploration.
+description: Minimal is a theme for GitHub Pages.
 plugins:
   - jemoji
