@@ -1,7 +1,5 @@
 
-## Hello, welcome to MOON 
-
-:first_quarter_moon_with_face:
+## Hello, welcome to MOON :first_quarter_moon_with_face:
 
 My name is Ivy Wu.
 
