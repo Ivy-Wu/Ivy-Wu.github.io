@@ -1,3 +1,4 @@
+mathjax: true
 
 ## What is MOON? :cookie:
 
