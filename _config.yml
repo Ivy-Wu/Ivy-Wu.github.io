@@ -7,3 +7,4 @@ description: " My name is Ivy Wu. There are three things that are important to m
 google_analytics: UA-127038309-1
 plugins:
   - jemoji
+markdown: maruku
