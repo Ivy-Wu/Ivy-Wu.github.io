@@ -8,3 +8,4 @@ google_analytics: UA-127038309-1
 plugins:
   - jemoji
 markdown: kramdown
+mathjax: true
