@@ -1,3 +1,8 @@
+---
+layout: post
+mathjax: true
+---
+
 ## What is MOON? :cookie:
 
 **MO**re than **ON**e time I find myself using a new computer when I want to refer to my previous work which was done on the old one and the old computer is long gone.
