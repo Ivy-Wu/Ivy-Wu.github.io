@@ -5,11 +5,10 @@ mathjax: true
 ---
 <div class="blurb">
 	<h2> Past Posts :memo: </h2>
-	<ul class="posts">
 	  {% for post in site.posts %}
 	    <li><span>{{ page.date | date: "%b %-d %Y" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	  {% endfor %}
-	</ul>
+	
 	<h2>What is MOON? :cookie: </h2>
 	<p><b>MO</b>re than <b>ON</b>e time I find myself using a new computer when I want to refer to my previous work which was done on the old one and the old computer is long gone. </p>
 
