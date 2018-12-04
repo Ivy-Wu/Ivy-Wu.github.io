@@ -1,3 +1,5 @@
+## Welcome to MOON! :moon:
+For all posts, please refer to the [blog](https://ivy-wu.github.io/blog) page.
 
 ## What is MOON? :cookie:
 
