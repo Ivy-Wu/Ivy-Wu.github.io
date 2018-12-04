@@ -1,5 +1,6 @@
 ## Welcome to MOON! :moon:
 For all posts, please refer to the [blog](https://ivy-wu.github.io/blog) page.
+[Introduction to Reinforcement Learning](https://ivy-wu.github.io/blog/2018/12/04/RL-intro)
 
 ## What is MOON? :cookie:
 
