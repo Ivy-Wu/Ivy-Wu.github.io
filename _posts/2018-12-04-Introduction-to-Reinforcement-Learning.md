@@ -1,6 +1,5 @@
 
 ## Introduction to Reinforcement Learning
 
-Well. Finally got around to putting this old website together. 
-Neat thing about it - powered by [Jekyll](http://jekyllrb.com) 
-and I can use Markdown to author my posts. It actually is a lot easier than I thought it was going to be.
+The term \textit{Reinforcement Learning} has gained great popularity since the day AlphaGo won four out of the five games it had with Lee Sedol in March 2016. More and more people get to know about \textit{Reinforcement Learning}. Slightly more than a year later, AlphaGo\'s close relative AlphaGo Zero was able to reach AlphaGo's level in a matter of days. AlphaGo Zero starts with no external knowledge but the playing rules of Go. Needless to say, the term \textit{reinforcement learning} became a word of magic, a technique that can virtually solve any complicate problems.
+
