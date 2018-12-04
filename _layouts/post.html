@@ -30,10 +30,13 @@
         <div class="header">
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         </div>
-
-        <article>
-          {{content}}
-           </article>
+      
+      
+        <div class="column">
+          <article>
+            {{content}}
+             </article>
+        </div>  
 
   </body>
 
