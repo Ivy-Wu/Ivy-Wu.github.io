@@ -1,44 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
-  
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: default
+---
 
-{% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
-    
-    <style>
-              /* Style the header */
-      .header {
-          background-color: #f1f1f1;
-          padding: 20px;
-          text-align: center;
-      }
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+<h1>{{ page.title }}</h1>
 
-        /* Create three equal columns that floats next to each other */
-      .column {
-          float: left;
-          width: 33.33%;
-          padding: 15px;
-      }
-    </style>
-  </head>
+<p class="view">by {{ page.author | default: site.author }}</p>
 
-    <body>
-        <div class="header">
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        <p>Resize the browser window to see the responsive effect.</p>
-        </div>
+{{content}}
 
-        <article>
-          {{content}}
-           </article>
-
-  </body>
-
-</html>
+{% if page.tags %}
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endif %}
