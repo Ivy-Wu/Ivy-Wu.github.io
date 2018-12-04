@@ -9,3 +9,4 @@ plugins:
   - jemoji
 markdown: kramdown
 mathjax: true
+permalink: /blog/:year/:month/:day/:title
