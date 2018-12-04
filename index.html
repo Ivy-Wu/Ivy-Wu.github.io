@@ -6,7 +6,7 @@ mathjax: true
 <div class="blurb">
 	<h2> Past Posts :memo: </h2>
 	  {% for post in site.posts %}
-	    <li><span>{{ page.date | date: "%b %-d %Y" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	    <li><span>{{ page.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	  {% endfor %}
 	
 	<h2>What is MOON? :cookie: </h2>
