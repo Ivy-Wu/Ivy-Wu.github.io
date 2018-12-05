@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Introduction to Reinforcement Learning"
+date: 2018-12-04
+mathjax: true
+---
 
 ## Introduction to Reinforcement Learning
 
