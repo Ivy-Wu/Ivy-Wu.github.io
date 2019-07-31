@@ -1,25 +1,8 @@
-
-\documentclass{article}
-\usepackage{geometry}
-\geometry{portrait, margin=1in}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath,amsfonts,amsthm} % Math
-\usepackage{amsfonts}
-\usepackage{tikz}
-\usepackage{graphicx} % takes care of graphic including machinery
-\usepackage{tabularx} 
-\usepackage{tikz} 
-\usetikzlibrary{matrix,positioning}
-\setlength{\parindent}{0em}
-\tikzset{bullet/.style={circle,fill,inner sep=2pt}}
-
-
-
-\begin{document}
-\title{Option Pricing 101}
-\date{}
-\maketitle
-
+---
+layout: post
+title: Option Pricing 101
+mathjax: true
+---
 
 \section{One-Period Binomial Tree}
 We start will the simplest one-period binomial tree model, which assumes the stock price can take on two values in one period of time. Assume that the stock is currently trading at \$100 and the two possible outcome for the next period is \$120 and \$80 with equal probability. We have a one-period call option with strike price \$100. We also assume the interest rate is 0\% for simplicity.
