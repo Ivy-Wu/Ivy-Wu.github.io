@@ -7,15 +7,16 @@ mathjax: true
 <html>
 <head>
 	<title>MathJax Test</title>
-	<meta name="generator" content="BBEdit">
-    <script type="text/javascript"
-      src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-</head>
+	
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+	{% include lib/mathjax.html %}
+	</head>
 
 <body>
 
 <h1>MathJax Test</h1> 
+	
 <hr>
 \[ \Phi(x) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^x e^{-\xi^2/2}\; d\xi \]
 </body>
