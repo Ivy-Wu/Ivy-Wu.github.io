@@ -25,6 +25,7 @@ function checkFirstAnswer() {
 }
 </script>
   
+<br>
 <p> Second question - guess my favorite cocktail? The hint is: it is gin-based and citrusy. </p>
 <input type="text" cocktail="cocktail" onkeyup='checkSecondAnswer();'> 
 <p><span id="demo2"></span></p>
@@ -32,18 +33,24 @@ function checkFirstAnswer() {
 function checkSecondAnswer() {
   var a=document.getElementById("cocktail").value;
   if ((a == "Pimm's Cup") || (a == "pimm's cup") || (a == "Pimm's pup") ) {
-    document.getElementById("cocktail2").innerHTML = "<p> Placeholder"
+    document.getElementById("demo2").innerHTML = "Very smart (as expected) &#127864;"
   } else {
-    document.getElementById("cocktail2").innerHTML="Bbbzzzzz!"
+    document.getElementById("demo2").innerHTML="Bbbzzzzz!"
   }
 }
 </script>
 
 <button onclick="ClickBait()">Click me!</button>
-<span id="demo3">
+<span id="demo3"></span>
 <script>
 function ClickBait() {
-  document.getElementById("demo3").innerHTML="<img src="/pics/IMG_2376.png" style="width:450px;height:600px;">"
+  var a=document.getElementById("cocktail").value.toLowerCase();
+  if (a <> "pimm's cup"){
+    document.getElementById("demo3").innerHTML = "<p> Do not skip question 2! </p>"
+  }
+  else {
+  document.getElementById("demo3").innerHTML="<img src=\"/pics/IMG_2376.png\" style=\"width:450px;height:600px;\">"
+  }
 }
 </script>
 
