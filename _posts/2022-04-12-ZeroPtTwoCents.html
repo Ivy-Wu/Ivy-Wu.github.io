@@ -9,10 +9,11 @@ mathjax: true
 
 <p> Welcome to your question(s) of the day! &#128521; </p>
 <p> Before we start, guess what is on my mind? Hit enter to submit.</p>
-<form> <input type="text" name="name" onkeyup='saveValue(this);'> <br> </form>
+<form> <input type="text" name="name" onkeyup='saveValue(this);'> </form>
 
-<p> Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry)..</p>
+{% if name == "Dario" %}  Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> {% endif %}
   
-<p> Before we start, guess what is on my mind? Hit enter to submit.</p>
-<form> <input type="text" name="name" onkeyup='saveValue(this);'> <br> </form>
+<p> Second question - guess my favorite cocktail? The hint is: it is gin-based and citrusy. </p>
+<form> <input type="text" cocktail="name" onkeyup='saveValue(this);'> </form>
 
+{% if name == "Dario" %} Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> {% endif %}
