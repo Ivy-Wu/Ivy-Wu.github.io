@@ -5,9 +5,11 @@ mathjax: true
 ---
 
 
-<h3 style="font-family:verdana"> Hello there and morning! &#57418; </h3>
+<h3 style="font-family:verdana"> Hello there and morning! &#9728; </h3>
 
-<p> Add your details: </p>
+<p> First question of the day </p>
 
 <form> Student Name: <br> <input type="text" name="name"> <br> </form>
+
+{% if name == "Ivy" %} <p> Hello world </p> {% else %} Hello world x 2 {% endif %}
 
