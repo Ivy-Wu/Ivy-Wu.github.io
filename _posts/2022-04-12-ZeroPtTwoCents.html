@@ -17,9 +17,12 @@ mathjax: true
 function checkFirstAnswer() {
   var a=document.getElementById("text_a").value;
   
-  if a == "Dario" || a == "dario" {
-      document.getElementById("name").innerHTML = "Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> "
+  if ((a == "Dario") || (a == "dario")) {
+    document.getElementById("name").innerHTML = "Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> "
+  } else {
+    document.getElementById("name").innerHTML="Bbbzzzzz!"
   }
+  
 }
 </script>
 
