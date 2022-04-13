@@ -15,21 +15,28 @@ mathjax: true
 
 <script>
 function checkFirstAnswer() {
-  var a=document.getElementById("text_a").value;
-  
+  var a=document.getElementById("name").value;
   if ((a == "Dario") || (a == "dario")) {
-    document.getElementById("name").innerHTML = "Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> "
+    document.getElementById("name").innerHTML = "<p> Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> </p>"
   } else {
     document.getElementById("name").innerHTML="Bbbzzzzz!"
   }
-  
 }
 </script>
-
+  
 <p> Second question - guess my favorite cocktail? The hint is: it is gin-based and citrusy. </p>
-<form> <input type="text" cocktail="name" onkeyup='saveValue(this);'> </form>
+<form> <input type="text" cocktail="cocktail" onkeyup='checkSecondAnswer();'> </form>
 
-{% if name == "Dario" %} Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> {% endif %}
+<script>
+function checkSecondAnswer() {
+  var a=document.getElementById("cocktail").value;
+  if ((a == "Pimm's Cup") || (a == "pimm's cup") || (a == "Pimm's pup") ) {
+    document.getElementById("cocktail").innerHTML = "<p> Placeholder"
+  } else {
+    document.getElementById("cocktail").innerHTML="Bbbzzzzz!"
+  }
+}
+</script>
 
 <img src="IMG_2376.png" style="width:450px;height:600px;">
 
