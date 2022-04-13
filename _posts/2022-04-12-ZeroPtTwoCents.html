@@ -29,6 +29,7 @@ function checkFirstAnswer() {
 <p> Second question - guess my favorite cocktail? The hint is: it is second-order gin based and citrusy. </p>
 <input type="text" id="cocktail" onkeyup="checkSecondAnswer()"> 
 <p><span id="demo2"></span></p>
+  
 <script>
 function checkSecondAnswer() {
   var a=document.getElementById("cocktail").value.toLowerCase();
@@ -40,12 +41,13 @@ function checkSecondAnswer() {
 }
 </script>
 
-<button onclick="ClickBait()">Click me!</button>
+<button onclick="ClickBait()">This is a click bait.</button>
 <p><span id="demo3"></span></p>
+  
 <script>
 function ClickBait() {
   var a=document.getElementById("cocktail").value.toLowerCase();
-  if (a <> "pimm's cup"){
+  if (a != "pimm's cup"){
     document.getElementById("demo3").innerHTML = "<p> Do not skip question 2! </p>"
   }
   else {
