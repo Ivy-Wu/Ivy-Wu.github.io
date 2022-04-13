@@ -47,8 +47,10 @@ function checkSecondAnswer() {
 <script>
 function ClickBait() {
   var a=document.getElementById("cocktail").value.toLowerCase();
-  if (a != "pimm's cup"){
-    document.getElementById("demo3").innerHTML = "<p> Do not skip question 2! </p>"
+  var b=document.getElementById("name").value.toLowerCase();
+  
+  if ((a != "pimm's cup") || (b != "dario")) {
+    document.getElementById("demo3").innerHTML = "<p> Do not skip steps! </p>"
   }
   else {
     document.getElementById("demo3").innerHTML="<img src=\"/pics/IMG_2376.png\" style=\"width:450px;height:600px;\">"
