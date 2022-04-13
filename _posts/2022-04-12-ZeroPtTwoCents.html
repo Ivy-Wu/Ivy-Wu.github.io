@@ -18,7 +18,7 @@ mathjax: true
 function checkFirstAnswer() {
   var a=document.getElementById("name").value.toLowerCase();
   if (a == "dario") {
-    document.getElementById("demo").innerHTML = "<p> Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> </p>"
+    document.getElementById("demo").innerHTML = "<p> Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. As you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> </p>"
   } else {
     document.getElementById("demo").innerHTML="Bbbzzzzz!"
   }
@@ -26,8 +26,8 @@ function checkFirstAnswer() {
 </script>
   
 <br>
-<p> Second question - guess my favorite cocktail? The hint is: it is gin-based and citrusy. </p>
-<input type="text" id="cocktail" onkeyup='checkSecondAnswer();'> 
+<p> Second question - guess my favorite cocktail? The hint is: it is second-order gin based and citrusy. </p>
+<input type="text" id="cocktail" onkeyup="checkSecondAnswer()"> 
 <p><span id="demo2"></span></p>
 <script>
 function checkSecondAnswer() {
@@ -41,7 +41,7 @@ function checkSecondAnswer() {
 </script>
 
 <button onclick="ClickBait()">Click me!</button>
-<span id="demo3"></span>
+<p><span id="demo3"></span></p>
 <script>
 function ClickBait() {
   var a=document.getElementById("cocktail").value.toLowerCase();
