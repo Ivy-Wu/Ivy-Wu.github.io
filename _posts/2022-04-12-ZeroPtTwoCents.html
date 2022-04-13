@@ -33,7 +33,7 @@ function checkFirstAnswer() {
 <script>
 function checkSecondAnswer() {
   var a=document.getElementById("cocktail").value.toLowerCase();
-  if (a == "pimm's cup") {
+  if (a == "pimm's cup") || (a == "pimm’s cup"){
     document.getElementById("demo2").innerHTML = "Very smart (as expected) &#127864;"
   } else {
     document.getElementById("demo2").innerHTML="Bbbzzzzz!"
@@ -49,7 +49,7 @@ function ClickBait() {
   var a=document.getElementById("cocktail").value.toLowerCase();
   var b=document.getElementById("name").value.toLowerCase();
   
-  if ((a != "pimm's cup") || (b != "dario")) {
+  if ((a != "pimm's cup") && (a != "pimm’s cup")) || (b != "dario")) {
     document.getElementById("demo3").innerHTML = "<p> Do not skip steps! </p>"
   }
   else {
