@@ -11,34 +11,42 @@ mathjax: true
 
 <p> Welcome to your question(s) of the day! &#128521; </p>
 <p> Before we start, guess what is on my mind? Hit enter to submit.</p>
-<form> <input type="text" name="name" onkeyup='checkFirstAnswer()'> </form>
+<input type="text" id="name" onkeyup="checkFirstAnswer()"> 
 
+<p><span id="demo"></span></p>
 <script>
 function checkFirstAnswer() {
   var a=document.getElementById("name").value;
   if ((a == "Dario") || (a == "dario")) {
-    document.getElementById("name").innerHTML = "<p> Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> </p>"
+    document.getElementById("demo").innerHTML = "<p> Nice one. My 0.2 cents to your random thoughts last night: <i> To start, I need to admit that I am probably close to illiterate when it comes to (broadly speaking) allegorical or symbolic art. Like you said, this is attributed to the way I was raised / brought up: art was generally not emphasized / particularly encouraged. I'd be very much interested in listening to you explaining to me various things but it just won't be a two-way street. And I also suspect how much it will stick.. (sorry).. <i> </p>"
   } else {
-    document.getElementById("name").innerHTML="Bbbzzzzz!"
+    document.getElementById("demo").innerHTML="Bbbzzzzz!"
   }
 }
 </script>
   
 <p> Second question - guess my favorite cocktail? The hint is: it is gin-based and citrusy. </p>
-<form> <input type="text" cocktail="cocktail" onkeyup='checkSecondAnswer();'> </form>
-
+<input type="text" cocktail="cocktail" onkeyup='checkSecondAnswer();'> 
+<p><span id="demo2"></span></p>
 <script>
 function checkSecondAnswer() {
   var a=document.getElementById("cocktail").value;
   if ((a == "Pimm's Cup") || (a == "pimm's cup") || (a == "Pimm's pup") ) {
-    document.getElementById("cocktail").innerHTML = "<p> Placeholder"
+    document.getElementById("cocktail2").innerHTML = "<p> Placeholder"
   } else {
-    document.getElementById("cocktail").innerHTML="Bbbzzzzz!"
+    document.getElementById("cocktail2").innerHTML="Bbbzzzzz!"
   }
 }
 </script>
 
-<img src="/pics/IMG_2376.png" style="width:450px;height:600px;">
+<button onclick="ClickBait()">Click me!</button>
+<span id="demo3">
+<script>
+function ClickBait() {
+  document.getElementById("demo3").innerHTML="<img src="/pics/IMG_2376.png" style="width:450px;height:600px;">"
+}
+</script>
+
 
  </body>
 </html>
