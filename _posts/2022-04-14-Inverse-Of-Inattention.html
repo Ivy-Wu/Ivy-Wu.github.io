@@ -51,12 +51,12 @@ mathjax: true
   
 <script>
 function Randomness() {
-   if  (document.getElementById("favClass").value.typeof === undefined && 
-       document.getElementById("bigNumber").value.typeof === undefined && 
-       document.getElementById("notFood").value.typeof === undefined) {
+   if  ((document.getElementById("favClass").value.typeof === undefined) || 
+       (document.getElementById("bigNumber").value.typeof === undefined) || 
+       (document.getElementById("notFood").value.typeof === undefined)) {
        document.getElementById("demo3").innerHTML = "<p> I see you're not trying. &#128530; </p>"
-       return
    }
+ else {
  
    var thresholdP = 0.3
    if (document.getElementById("favClass").value == "Algorithm") {
@@ -101,7 +101,7 @@ function Randomness() {
   if (! showPicture) {
     document.getElementById("demo3").innerHTML = "<p tyle=\"font-family:verdana;\"> Bummer! Unlucky! &#128543; </p>"
   }
-  
+ }
 }
 </script>
 
