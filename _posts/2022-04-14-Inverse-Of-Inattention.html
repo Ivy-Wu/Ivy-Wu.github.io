@@ -9,17 +9,8 @@ mathjax: true
 
 <h3> I<sup>3</sup> - Inverse of Ivy's Inattention </h3>
 
- <p> <img src="/pics/r2d2.png" style="width:25px;height:25px;">: Ivy says she's sorry she couldn't be more attentive to Master Dario last night and she'd like to make up to you, subject to randomness. &#128563; </p>
+ <p> <img src="/pics/r2d2.png" style="width:25px;">: Ivy says she's sorry she couldn't be more attentive to Master Dario last night and she'd like to make up to you, subject to randomness. &#128563; </p>
  
- <h4> Choose your distribution! </h4> 
-<label for="distribution"> </label>
-<select name="distribution" id="distribution" multiple>
-  <option value="Bernoulli">Bernoulli</option>
-  <option value="Normal">Normal</option>
-  <option value="Exponential">Exponential</option>
-  <option value="Poisson">Poisson</option>
-</select>
-
  <h4> Ways to improve your chance! &#127808; </h4>
  <br>
  
@@ -41,7 +32,7 @@ mathjax: true
 </select>
  
 
-  <label for="bigNumber">Which of the following number is the biggest: </label>
+  <label for="bigNumber">Which of the following number is the biggest: </label><br>
 <select name="bigNumber" id="bigNumber" multiple>
   <option value="Graham">Graham's Number</option>
   <option value="Googolplex">Googolplex</option>
@@ -50,7 +41,7 @@ mathjax: true
 </select>
 
  <br>
-  <label for="notFood"> One thing I don't (prefer not to) eat </label>
+  <label for="notFood"> One thing I don't (prefer not to) eat </label><br>
 <select name="notFood" id="notFood" multiple>
   <option value="Wasabi">Wasabi</option>
   <option value="cilantro">cilantro</option>
@@ -63,8 +54,58 @@ mathjax: true
 <p><span id="demo3"></span></p>
   
 <script>
-function ClickBait() {
-  document.getElementById("demo3").innerHTML = "<p> Do not skip steps! </p>"
+function Randomness() {
+   var thresholdP = 0.5
+   if document.getElementById("favClass").value == "Algorithms" {
+      thresholdP += Math.random() * 0.1
+   }
+   if document.getElementById("bigNumber").value == "Tree3" {
+      thresholdP += Math.random() * 0.1
+   }
+   if document.getElementById("notFood").value == "carrot" {
+      thresholdP += Math.random() * 0.15
+   }
+   if document.getElementById("notFood").value == "cilantro" {
+      thresholdP += Math.random() * 0.1
+   }
+   
+   var picNumber = Math.random()
+   var showPicture = false
+  
+   
+   if (picNumber <= 0.25)  // glow picture {
+      if (Math.random() > thresholdP) {
+       showPicture = true
+       document.getElementById("demo3").innerHTML = "<img src=\"/pics/IMG_2410.png\" style=\"max-width:90%;max-height:90%;\">"
+      }
+   }
+   else if (picNumber <= 0.5) // grimace face  {
+      if (Math.random() > thresholdP) {
+       showPicture = true
+       document.getElementById("demo3").innerHTML = "<img src=\"/pics/IMG_2404.png\" style=\"max-width:90%;max-height:90%;\">"
+      }
+   }
+   else if (picNumber <= 0.75) // grimace face  {
+      if (Math.random() > thresholdP) {
+       showPicture = true
+       document.getElementById("demo3").innerHTML = "<img src=\"/pics/IMG_2405.png\" style=\"max-width:90%;max-height:90%;\">"
+      }
+   }
+   else {
+      if (Math.random() > thresholdP) {
+       showPicture = true
+       document.getElementById("demo3").innerHTML = "<img src=\"/pics/IMG_2402.png\" style=\"max-width:90%;max-height:90%;\">"
+      }
+   }
+ 
+   if document.getElementById("notFood").value == "cilantro" {
+      thresholdP += Math.random() * 0.15
+   }
+   
+  if not showPicture {
+    document.getElementById("demo3").innerHTML = "<p> Bummer! Unlucky! </p>"
+  }
+  
 }
 </script>
 
