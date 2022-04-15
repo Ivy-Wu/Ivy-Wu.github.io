@@ -58,12 +58,12 @@ function Randomness() {
    }
  else {
  
-   var thresholdP = 0.1
+   var thresholdP = 0.05
    if (document.getElementById("favClass").value == "Algorithm") {
-      thresholdP += Math.random() * 1
+      thresholdP += Math.random() * 0.75
    }
    if (document.getElementById("bigNumber").value == "Tree3") {
-      thresholdP += Math.random() * 0.25
+      thresholdP += Math.random() * 0.2
    }
    if (document.getElementById("notFood").value == "Carrot") {
       thresholdP += Math.random() * 0.75
