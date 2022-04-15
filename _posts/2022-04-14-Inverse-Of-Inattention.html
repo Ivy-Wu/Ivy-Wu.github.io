@@ -51,6 +51,13 @@ mathjax: true
   
 <script>
 function Randomness() {
+   if  (document.getElementById("favClass").value.typeof === undefined && 
+       document.getElementById("bigNumber").value.typeof === undefined && 
+       document.getElementById("notFood").value.typeof === undefined) {
+       document.getElementById("demo3").innerHTML = "<p> I see you're not trying. &#128530; </p>"
+       return
+   }
+ 
    var thresholdP = 0.3
    if (document.getElementById("favClass").value == "Algorithm") {
       thresholdP += Math.random() * 0.75
