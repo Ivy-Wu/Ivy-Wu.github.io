@@ -22,6 +22,7 @@ mathjax: true
 </select>
  
  <br>
+ <br>
 
   <label for="bigNumber">Which of the following number is the biggest </label><br>
 <select name="bigNumber" id="bigNumber" multiple>
@@ -32,52 +33,53 @@ mathjax: true
 </select>
 
  <br>
+ <br>
  
   <label for="notFood"> One thing I don't (prefer not to) eat </label><br>
 <select name="notFood" id="notFood" multiple>
   <option value="Wasabi">Wasabi</option>
-  <option value="cilantro">cilantro</option>
-  <option value="fennel">Fennel</option>
-  <option value="carrot">Carrot</option>
+  <option value="Cilantro">Cilantro</option>
+  <option value="Fennel">Fennel</option>
+  <option value="Carrot">Carrot</option>
 </select>
  
+ <br>
  <br>
  <button onclick="Randomness()">Ready to test your luck? </button>
 <p><span id="demo3"></span></p>
   
 <script>
 function Randomness() {
-   var thresholdP = 0.5
-   if document.getElementById("favClass").value == "Algorithms" {
+   var thresholdP = 0.3
+   if (document.getElementById("favClass").value == "Algorithm") {
+      thresholdP += Math.random() * 0.5
+   }
+   if (document.getElementById("bigNumber").value == "Tree3") {
       thresholdP += Math.random() * 0.1
    }
-   if document.getElementById("bigNumber").value == "Tree3" {
-      thresholdP += Math.random() * 0.1
+   if (document.getElementById("notFood").value == "Carrot") {
+      thresholdP += Math.random() * 0.25
    }
-   if document.getElementById("notFood").value == "carrot" {
-      thresholdP += Math.random() * 0.15
-   }
-   if document.getElementById("notFood").value == "cilantro" {
-      thresholdP += Math.random() * 0.1
+   if (document.getElementById("notFood").value == "Cilantro") {
+      thresholdP += Math.random() * 0.2
    }
    
    var picNumber = Math.random()
    var showPicture = false
   
-   
-   if (picNumber <= 0.25)  // glow picture {
+   if (picNumber <= 0.25)  {
       if (Math.random() > thresholdP) {
        showPicture = true
        document.getElementById("demo3").innerHTML = "<img src=\"/pics/IMG_2410.png\" style=\"max-width:90%;max-height:90%;\">"
       }
    }
-   else if (picNumber <= 0.5) // grimace face  {
+   else if (picNumber <= 0.5) {
       if (Math.random() > thresholdP) {
        showPicture = true
        document.getElementById("demo3").innerHTML = "<img src=\"/pics/IMG_2404.png\" style=\"max-width:90%;max-height:90%;\">"
       }
    }
-   else if (picNumber <= 0.75) // grimace face  {
+   else if (picNumber <= 0.75)  {
       if (Math.random() > thresholdP) {
        showPicture = true
        document.getElementById("demo3").innerHTML = "<img src=\"/pics/IMG_2405.png\" style=\"max-width:90%;max-height:90%;\">"
@@ -90,11 +92,8 @@ function Randomness() {
       }
    }
  
-   if document.getElementById("notFood").value == "cilantro" {
-      thresholdP += Math.random() * 0.15
-   }
    
-  if not showPicture {
+  if (! showPicture) {
     document.getElementById("demo3").innerHTML = "<p tyle=\"font-family:verdana;\"> Bummer! Unlucky! &#128543; </p>"
   }
   
