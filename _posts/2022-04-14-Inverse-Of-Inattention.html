@@ -11,7 +11,8 @@ mathjax: true
 
  <p> <img src="/pics/r2d2.png" style="width:25px;height:25px;">: Ivy says she's sorry she couldn't be more attentive to Master Dario last night and she'd like to make up to you, subject to randomness. &#128563; </p>
  
-<label for="distribution">Choose a distribution:</label>
+ <h4> Choose your distribution! </h4> 
+<label for="distribution"> </label>
 <select name="distribution" id="distribution" multiple>
   <option value="Bernoulli">Bernoulli</option>
   <option value="Normal">Normal</option>
@@ -20,6 +21,7 @@ mathjax: true
 </select>
 
  <h4> Ways to improve your chance! &#127808; </h4>
+ <br>
  
 <label for="favClass">My fav class in university: </label>
 <select name="favClass" id="favClass" multiple>
@@ -29,6 +31,7 @@ mathjax: true
   <option value="Opera">Opera</option>
 </select>
  
+ <br>
  <label for="favClass">My fav class in university: </label>
 <select name="favClass" id="favClass" multiple>
   <option value="Algorithms">Algorithms</option>
@@ -46,7 +49,7 @@ mathjax: true
   <option value="Googol">Googol</option>
 </select>
 
- 
+ <br>
   <label for="notFood"> One thing I don't (prefer not to) eat </label>
 <select name="notFood" id="notFood" multiple>
   <option value="Wasabi">Wasabi</option>
@@ -55,6 +58,16 @@ mathjax: true
   <option value="carrot">Carrot</option>
 </select>
  
+ <br>
+ <button onclick="Randomness()">Ready to test your luck? </button>
+<p><span id="demo3"></span></p>
+  
+<script>
+function ClickBait() {
+  document.getElementById("demo3").innerHTML = "<p> Do not skip steps! </p>"
+}
+</script>
+
  
  </body>
 </html>
