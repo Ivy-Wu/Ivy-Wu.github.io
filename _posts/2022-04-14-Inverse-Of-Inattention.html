@@ -51,9 +51,9 @@ mathjax: true
   
 <script>
 function Randomness() {
-   if  ((document.getElementById("favClass").value.typeof === undefined) || 
-       (document.getElementById("bigNumber").value.typeof === undefined) || 
-       (document.getElementById("notFood").value.typeof === undefined)) {
+   if  ((document.getElementById("favClass").value == "") || 
+       (document.getElementById("bigNumber").value == "") || 
+       (document.getElementById("notFood").value == "")) {
        document.getElementById("demo3").innerHTML = "<p> I see you're not trying. &#128530; </p>"
    }
  else {
