@@ -58,15 +58,15 @@ function Randomness() {
    }
  else {
  
-   var thresholdP = 0.3
+   var thresholdP = 0.1
    if (document.getElementById("favClass").value == "Algorithm") {
-      thresholdP += Math.random() * 0.75
+      thresholdP += Math.random() * 1
    }
    if (document.getElementById("bigNumber").value == "Tree3") {
-      thresholdP += Math.random() * 0.1
+      thresholdP += Math.random() * 0.25
    }
    if (document.getElementById("notFood").value == "Carrot") {
-      thresholdP += Math.random() * 0.25
+      thresholdP += Math.random() * 0.75
    }
 
    var picNumber = Math.random()
