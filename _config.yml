@@ -1,9 +1,13 @@
 # General Jekyll Config
+
 theme: jekyll-theme-minimal
-title: Welcome to Moon
+title: Welcome to Doodle Land 
 show_downloads: false
 logo: pics/logo.png
-description: " My name is Ivy Wu. There are three things that are important to me: bed, computer, peanut butter. MOON contains a collection of my previous works and some random thoughts. You are more than welcome to have a space journey. :rocket: "
+description: >
+            I apprear to have negative patience and almost zero stamina. 
+            Hence the project was idle for a couple years because it crossed my mind again.
+            This is my doodle land where I collect my random thoughts for perhaps a couple years down the road I shall look back. 
 google_analytics: UA-127038309-1
 plugins:
   - jemoji
