@@ -1,13 +1,12 @@
 # General Jekyll Config
 
 theme: jekyll-theme-minimal
-title: Welcome to Doodle Land 
+title: Iby's Doodle Land 
 show_downloads: false
 logo: pics/logo.png
 description: >
-            I apprear to have negative patience and almost zero stamina. 
-            Hence the project was idle for a couple years because it crossed my mind again.
-            This is my doodle land where I collect my random thoughts for perhaps a couple years down the road I shall look back. 
+            Iby has negative patience and almost zero stamina. Here is a collection of her random thoughts and projects. 
+            And we're nothing more than a collection of brief moments in life. 
 google_analytics: UA-127038309-1
 plugins:
   - jemoji
