@@ -14,5 +14,4 @@ markdown: kramdown
 mathjax: true
 permalink: /blog/:categories/:year/:month/:day/:title.html. 
 exclude: 
-  - finance
   - _posts/financesub
