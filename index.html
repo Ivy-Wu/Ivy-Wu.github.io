@@ -11,14 +11,6 @@ mathjax: true
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <div class="blurb">
-	<h2> Past Posts :memo: </h2>
-	  <ul class="posts">
-
-	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date:"%B %d %Y" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>
-	
 	<h2>What is Doodle Land? :cookie: </h2>
 	<p>Doodle Land was originally born during covid times as a place for me to jot down random thoughts. 
 		Maybe also just a way to kill some idle time.
@@ -26,6 +18,15 @@ mathjax: true
 		As I approach 30, I start to to sense this latent insecurity or confusion as who I am, what I have become and what I am going to be. 
 		So I decided to resume this project, as a way to keep track of where I come from and hopefully it sheds light on where I am going. 
 	</p>
+
+	
+	<h2> Past Posts :memo: </h2>
+	  <ul class="posts">
+
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date:"%B %d %Y" }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
 	
 	<h2> What does the logo mean? :thought_balloon: </h2>
 	
