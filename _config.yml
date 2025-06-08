@@ -13,5 +13,4 @@ plugins:
 markdown: kramdown
 mathjax: true
 permalink: /blog/:categories/:year/:month/:day/:title.html. 
-exclude:
-  - _posts/financesub
+
