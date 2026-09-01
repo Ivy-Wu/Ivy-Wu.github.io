@@ -439,6 +439,12 @@ function startGame(s) {
   setup = s;
   document.getElementById("quizScreen").classList.remove("active");
   document.getElementById("gameScreen").classList.add("active");
+
+  // Start the tennis screen at the very top, including on mobile browsers.
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
+  });
+
   document.getElementById("playerLabel").textContent = s.codeName || "Player";
   document.getElementById("surfacePill").textContent =
     "Court: " + (s.surface === "hard" ? "Hard court" : s.surface[0].toUpperCase() + s.surface.slice(1));
