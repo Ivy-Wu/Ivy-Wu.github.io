@@ -1037,10 +1037,17 @@ function endGame(text) {
     ctx.fillText(text,W/2,H/2-2);
 
     // Small sign-off inside the same popup
-    ctx.globalAlpha = 0.55;
-    ctx.font="600 13px Nunito, sans-serif";
-    ctx.fillText("thanks for playing — have a nice day ☀️",W/2,H/2+30);
-    ctx.globalAlpha = 1;
+    ctx.save();
+    ctx.globalAlpha = 0.58;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.font = "600 11px Nunito, sans-serif";
+    ctx.fillText(
+      "thanks for playing — have a nice day ☀️",
+      W / 2,
+      H / 2 + 30
+    );
+    ctx.restore();
 
     document.getElementById("restartBtn").style.display="block";
   },120);
