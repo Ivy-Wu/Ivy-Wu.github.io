@@ -15,11 +15,11 @@ body{
 .screen.active{display:block}
 
 .quiz-wrap{
-  width:min(700px,100%);margin:0 auto;padding:42px 20px 64px;
+  width:min(620px,100%);margin:0 auto;padding:30px 18px 44px;
 }
-.header-wrap{text-align:center;margin-bottom:30px}
-.header-img{width:min(520px,92%);height:auto;display:inline-block}
-.question{margin-bottom:33px}
+.header-wrap{text-align:center;margin-bottom:22px}
+.header-img{width:min(450px,88%);height:auto;display:inline-block}
+.question{margin-bottom:24px}
 .question-title{font-size:23px;font-weight:700;margin-bottom:12px;letter-spacing:.1px}
 .hint{font-size:17px;font-weight:500}
 input[type=text]{
@@ -40,13 +40,13 @@ input[type=text]:focus{box-shadow:3px 3px 0 #bddcf4}
 .submit-btn{
   display:block;margin:45px auto 0;padding:11px 34px;border:2px solid #17264d;
   border-radius:999px;background:#17264d;color:white;font:inherit;
-  font-size:21px;font-weight:800;cursor:pointer
+  font-size:18px;font-weight:800;cursor:pointer
 }
 #quizMessage{
       min-height:28px;
       margin-top:18px;
       text-align:center;
-      font-size:18px;
+      font-size:16px;
       font-weight:700;
       color:#8d5ab5;
       letter-spacing:.1px;
@@ -62,13 +62,13 @@ input[type=text]:focus{box-shadow:3px 3px 0 #bddcf4}
     }
 
 .game-shell{
-  width:min(820px,100%);margin:0 auto;padding:24px 18px 36px;
+  width:min(700px,100%);margin:0 auto;padding:18px 16px 28px;
 }
 .game-topbar{
   position:relative;display:flex;align-items:center;justify-content:center;
-  min-height:72px;margin-bottom:12px;
+  min-height:60px;margin-bottom:8px;
 }
-.game-title{margin:0;font-size:clamp(34px,6vw,56px);font-weight:800;letter-spacing:.3px;font-family:"Nunito","Arial Rounded MT Bold",sans-serif;border-radius:20px}
+.game-title{margin:0;font-size:clamp(30px,5vw,46px);font-weight:800;letter-spacing:.3px;font-family:"Nunito","Arial Rounded MT Bold",sans-serif;border-radius:20px}
 .score-box{
   position:absolute;right:0;top:0;background:white;border:2px solid #17264d;
   border-radius:14px;padding:6px 10px;min-width:132px;box-shadow:3px 3px 0 rgba(23,38,77,.18);
@@ -124,15 +124,16 @@ canvas{
   }
 
   .quiz-wrap{
-    padding:24px 14px 40px;
+    width:94%;
+    padding:16px 10px 28px;
   }
 
   .header-img{
-    width:min(420px,96%);
+    width:min(350px,88%);
   }
 
   .question{
-    margin-bottom:26px;
+    margin-bottom:18px;
   }
 
   .question-title{
@@ -150,19 +151,19 @@ canvas{
   }
 
   .game-shell{
-    width:100%;
-    padding:14px 10px 24px;
+    width:94%;
+    padding:10px 6px 18px;
   }
 
   .game-topbar{
-    min-height:62px;
+    min-height:52px;
     justify-content:center;
     padding-right:0;
     margin-bottom:8px;
   }
 
   .game-title{
-    font-size:34px;
+    font-size:29px;
     padding-right:105px;
   }
 
@@ -193,7 +194,7 @@ canvas{
   }
 
   canvas{
-    max-height:76vh;
+    max-height:68vh;
   }
 
   .game-help{
@@ -263,7 +264,7 @@ canvas{
           <label class="option"><input type="radio" name="coffeeRatio" value="100/0"><span>100% ☕️ / 0% 🍼</span></label>
           <label class="option"><input type="radio" name="coffeeRatio" value="85/15"><span>85% ☕️ / 15% 🍼</span></label>
           <label class="option"><input type="radio" name="coffeeRatio" value="75/25"><span>75% ☕️ / 25% 🍼</span></label>
-          <label class="option"><input type="radio" name="coffeeRatio" value="0/100"><span>0% ☕️ / 100% 🍼</span></label>
+          <label class="option"><input type="radio" name="coffeeRatio" value="0/100"><span>5% ☕️ / 95% 🍼</span></label>
         </div>
       </section>
 
@@ -440,9 +441,23 @@ function startGame(s) {
   document.getElementById("quizScreen").classList.remove("active");
   document.getElementById("gameScreen").classList.add("active");
 
-  // Start the tennis screen at the very top, including on mobile browsers.
+  // Start the tennis screen at the very top.
+  // Mobile Safari can preserve the old quiz scroll position after display changes,
+  // so reset scroll in multiple ways after the new layout has rendered.
   requestAnimationFrame(() => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     window.scrollTo(0, 0);
+
+    setTimeout(() => {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      window.scrollTo(0, 0);
+      document.getElementById("gameScreen").scrollIntoView({
+        block: "start",
+        behavior: "auto"
+      });
+    }, 50);
   });
 
   document.getElementById("playerLabel").textContent = s.codeName || "Player";
