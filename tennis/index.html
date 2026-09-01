@@ -396,6 +396,7 @@ let lastHitter = null;
 let serveFromDeuceSide = true;
 let serveInFlight = false;
 let serveBounceY = null;
+let serveDiagonalSign = 0;
 
 let pointPaused = false;
 let awaitingServe = false;
@@ -480,6 +481,7 @@ function prepareUserServe() {
   lastHitter = null;
   serveInFlight = false;
   serveBounceY = null;
+  serveDiagonalSign = 0;
 
   // Alternate serving position each point.
   // true = stand on right half, false = stand on left half.
@@ -512,7 +514,12 @@ function serveBall() {
 
   const onLeft = player.x < W / 2;
 
-  // Aim closer to the middle of the service box rather than near the sideline.
+  // Keep track of the cross-court direction:
+  // left server -> ball travels right (+1)
+  // right server -> ball travels left (-1)
+  serveDiagonalSign = onLeft ? 1 : -1;
+
+  // Aim closer to the middle of the opposite service box.
   const targetX = onLeft ? W * 0.59 : W * 0.41;
 
   const dx = targetX - ball.x;
@@ -563,6 +570,7 @@ function queueNextBall(dir) {
   awaitingServe = false;
   serveInFlight = false;
   serveBounceY = null;
+  serveDiagonalSign = 0;
   setServePrompt(false);
   ball = null;
 
@@ -883,16 +891,20 @@ function update() {
   ) {
     serveInFlight = false;
 
-    // After the bounce, direct the ball toward Ivy while keeping it safely
-    // inside the singles court.
+    // After the bounce, KEEP the same cross-court direction.
+    // Don't suddenly re-aim vertically at Ivy.
     const singlesLeft = 95 + 52;
     const singlesRight = W - 95 - 52;
-    const safeTargetX = Math.max(
-      singlesLeft + 70,
-      Math.min(singlesRight - 70, ivy.x)
+
+    const diagonalCarry = 95; // how much farther sideways the ball continues
+    let safeTargetX = ball.x + serveDiagonalSign * diagonalCarry;
+
+    safeTargetX = Math.max(
+      singlesLeft + 55,
+      Math.min(singlesRight - 55, safeTargetX)
     );
 
-    const targetY = ivy.y + 18;
+    const targetY = ivy.y + 22;
     const dx = safeTargetX - ball.x;
     const dy = targetY - ball.y;
     const distance = Math.hypot(dx, dy);
@@ -1044,6 +1056,7 @@ function endGame(text) {
   awaitingServe = false;
   serveInFlight = false;
   serveBounceY = null;
+  serveDiagonalSign = 0;
   setServePrompt(false);
   setTimeout(() => {
     ctx.fillStyle="rgba(251,250,246,.92)";
@@ -1108,6 +1121,7 @@ document.getElementById("restartBtn").addEventListener("click", function() {
   awaitingServe = false;
   serveInFlight = false;
   serveBounceY = null;
+  serveDiagonalSign = 0;
   setServePrompt(false);
   pPoints = 0;
   iPoints = 0;
