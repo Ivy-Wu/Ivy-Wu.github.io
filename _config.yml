@@ -1,11 +1,11 @@
 # General Jekyll Config
 
 theme: jekyll-theme-minimal
-title: Iby's Doodle Land 
+title: Ivy's Doodle Land 
 show_downloads: false
 logo: pics/logo.png
 description: >
-            Iby has negative patience and almost zero stamina. Here is a collection of her random thoughts and projects. 
+            Ivy has negative patience and almost zero stamina. Here is a collection of her random thoughts and projects. 
             And we're nothing more than a collection of brief moments in life. 
 google_analytics: UA-127038309-1
 plugins:
