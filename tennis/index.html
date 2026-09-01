@@ -71,8 +71,8 @@ input[type=text]:focus{box-shadow:3px 3px 0 #bddcf4}
 .game-title{margin:0;font-size:clamp(34px,6vw,56px);font-weight:800;letter-spacing:.3px;font-family:"Nunito","Arial Rounded MT Bold",sans-serif;border-radius:20px}
 .score-box{
   position:absolute;right:0;top:0;background:white;border:2px solid #17264d;
-  border-radius:16px;padding:8px 13px;min-width:160px;box-shadow:3px 3px 0 rgba(23,38,77,.18);
-  font-size:14px;font-weight:800
+  border-radius:14px;padding:6px 10px;min-width:132px;box-shadow:3px 3px 0 rgba(23,38,77,.18);
+  font-size:12px;font-weight:800
 }
 .score-row{display:flex;justify-content:space-between;gap:18px}
 .score-row + .score-row{margin-top:4px}
@@ -90,9 +90,129 @@ canvas{
   display:none;margin:16px auto 0;padding:8px 18px;border:2px solid #17264d;
   border-radius:999px;background:white;color:#17264d;font:inherit;font-weight:800;cursor:pointer
 }
+
+.mobile-controls{
+  display:none;
+  grid-template-columns:1fr 1.2fr 1fr;
+  gap:10px;
+  margin-top:14px;
+}
+.mobile-btn{
+  border:2px solid #17264d;
+  border-radius:16px;
+  background:#fff;
+  color:#17264d;
+  font:inherit;
+  font-size:20px;
+  font-weight:800;
+  padding:13px 8px;
+  user-select:none;
+  -webkit-user-select:none;
+  touch-action:none;
+}
+.mobile-btn.swing{
+  background:#17264d;
+  color:#fff;
+}
+.mobile-btn:active{
+  transform:translateY(1px) scale(.98);
+}
+
 @media (max-width:650px){
-  .game-topbar{justify-content:flex-start;padding-right:132px}
-  .score-box{min-width:126px;font-size:12px}
+  body{
+    overflow-x:hidden;
+  }
+
+  .quiz-wrap{
+    padding:24px 14px 40px;
+  }
+
+  .header-img{
+    width:min(420px,96%);
+  }
+
+  .question{
+    margin-bottom:26px;
+  }
+
+  .question-title{
+    font-size:20px;
+  }
+
+  .option span{
+    font-size:16px;
+    padding:10px 14px;
+  }
+
+  input[type=text]{
+    font-size:18px;
+    padding:12px 13px;
+  }
+
+  .game-shell{
+    width:100%;
+    padding:14px 10px 24px;
+  }
+
+  .game-topbar{
+    min-height:62px;
+    justify-content:center;
+    padding-right:0;
+    margin-bottom:8px;
+  }
+
+  .game-title{
+    font-size:34px;
+    padding-right:105px;
+  }
+
+  .score-box{
+    min-width:104px;
+    padding:5px 7px;
+    font-size:10px;
+    border-radius:12px;
+  }
+
+  .score-row{
+    gap:8px;
+  }
+
+  #scoreStatus{
+    font-size:10px !important;
+    margin-top:4px !important;
+  }
+
+  .game-meta{
+    gap:6px;
+    margin-bottom:8px;
+  }
+
+  .pill{
+    font-size:11px;
+    padding:4px 8px;
+  }
+
+  canvas{
+    max-height:72vh;
+  }
+
+  .game-help{
+    font-size:12px;
+    margin-top:8px;
+  }
+
+  #servePrompt{
+    font-size:14px !important;
+    margin-top:6px !important;
+  }
+
+  .mobile-controls{
+    display:grid;
+  }
+
+  .restart{
+    margin-top:14px;
+  }
 }
 </style>
 </head>
@@ -178,9 +298,14 @@ canvas{
       <span class="pill" id="abilityPill">Ability: —</span>
     </div>
 
-    <canvas id="court" width="760" height="620"></canvas>
+    <canvas id="court" width="720" height="700"></canvas>
     <div class="game-help">Move with ← → or A / D. Space / click to serve or swing.</div>
 <div id="servePrompt" style="text-align:center;margin-top:8px;font-size:16px;font-weight:800;color:#8d5ab5;min-height:22px;"></div>
+<div class="mobile-controls" aria-label="Mobile tennis controls">
+  <button type="button" class="mobile-btn" id="leftBtn">←</button>
+  <button type="button" class="mobile-btn swing" id="swingBtn">SWING</button>
+  <button type="button" class="mobile-btn" id="rightBtn">→</button>
+</div>
     <button id="restartBtn" class="restart">Play again</button>
   </main>
 </section>
@@ -872,7 +997,8 @@ function endGame(text) {
     // Small sign-off inside the same popup
     ctx.globalAlpha = 0.55;
     ctx.font="600 13px Nunito, sans-serif";
-    ctx.fillText("thanks for playing — have a nice day ☀️",W/2,H/2+28);
+    ctx.fillText("thanks for playing",W/2,H/2+28);
+    ctx.fillText("have a nice day ☀️",W/2,H/2+46);
     ctx.globalAlpha = 1;
 
     document.getElementById("restartBtn").style.display="block";
@@ -926,9 +1052,41 @@ document.getElementById("restartBtn").addEventListener("click", function() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+
+function bindHoldButton(buttonId, keyName) {
+  const btn = document.getElementById(buttonId);
+
+  const press = (e) => {
+    e.preventDefault();
+    keys[keyName] = true;
+  };
+
+  const release = (e) => {
+    e.preventDefault();
+    keys[keyName] = false;
+  };
+
+  btn.addEventListener("pointerdown", press);
+  btn.addEventListener("pointerup", release);
+  btn.addEventListener("pointercancel", release);
+  btn.addEventListener("pointerleave", release);
+}
+
+bindHoldButton("leftBtn", "ArrowLeft");
+bindHoldButton("rightBtn", "ArrowRight");
+
+document.getElementById("swingBtn").addEventListener("pointerdown", e => {
+  e.preventDefault();
+  startSwing();
+});
+
 // Basic pointer/touch control for mobile.
 canvas.addEventListener("pointermove", e => {
   if (!player || !running) return;
+
+  // On phones/tablets, only drag-to-move while the pointer is held down.
+  if ((e.pointerType === "touch" || e.pointerType === "pen") && e.buttons === 0) return;
+
   const rect = canvas.getBoundingClientRect();
   const x = (e.clientX - rect.left) * (canvas.width / rect.width);
   player.x = Math.max(95+player.w/2, Math.min(W-95-player.w/2, x));
