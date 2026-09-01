@@ -6,6 +6,8 @@ title: Past Posts
 	<ul class="posts">
 
 	  {% for post in site.posts %}
+		{% unless post.hidden %}
 	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+		{% endunless &%}
 	  {% endfor %}
 	</ul>
